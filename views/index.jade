@@ -1,0 +1,276 @@
+extends layout
+
+block content
+	script(type='text/javascript').
+		FWDUVPUtils.onReady(function () {
+			FWDUVPlayer.useYoutube = "yes";
+			new FWDUVPlayer({
+				//main settings
+				instanceName: "player1",
+				parentId: "myDiv",
+				playlistsId: "playlists",
+				mainFolderPath: "content",
+				skinPath: "modern_skin_white",
+				displayType: "responsive",
+				facebookAppId: "213684265480896",
+				useDeepLinking: "yes",
+				rightClickContextMenu: "developer",
+				addKeyboardSupport: "yes",
+				autoScale: "yes",
+				showButtonsToolTip: "yes",
+				stopVideoWhenPlayComplete: "no",
+				autoPlay: "no",
+				loop: "no",
+				shuffle: "no",
+				maxWidth: 1366,
+				maxHeight: 650,
+				volume: .8,
+				buttonsToolTipHideDelay: 1.5,
+				backgroundColor: "#FFFFFF",
+				videoBackgroundColor: "#ebebeb",
+				posterBackgroundColor: "#ebebeb",
+				buttonsToolTipFontColor: "#000000",
+				//logo settings
+				showLogo: "yes",
+				hideLogoWithController: "yes",
+				logoPosition: "topRight",
+				logoMargins: 5,
+				//playlists/categories settings
+				showPlaylistsButtonAndPlaylists: "no",
+				showPlaylistsByDefault: "no",
+				thumbnailSelectedType: "opacity",
+				startAtPlaylist: 0,
+				buttonsMargins: 7,
+				thumbnailMaxWidth: 350,
+				thumbnailMaxHeight: 350,
+				horizontalSpaceBetweenThumbnails: 40,
+				verticalSpaceBetweenThumbnails: 40,
+				//playlist settings
+				showPlaylistButtonAndPlaylist: "yes",
+				playlistPosition: "right",
+				showPlaylistByDefault: "yes",
+				showPlaylistName: "yes",
+				showSearchInput: "yes",
+				showLoopButton: "no",
+				showShuffleButton: "no",
+				showNextAndPrevButtons: "yes",
+				forceDisableDownloadButtonForFolder: "yes",
+				addMouseWheelSupport: "yes",
+				startAtRandomVideo: "no",
+				folderVideoLabel: "VIDEO ",
+				playlistRightWidth: 290,
+				playlistBottomHeight: 599,
+				startAtVideo: 0,
+				maxPlaylistItems: 50,
+				thumbnailWidth: 70,
+				thumbnailHeight: 70,
+				spaceBetweenControllerAndPlaylist: 2,
+				spaceBetweenThumbnails: 2,
+				scrollbarOffestWidth: 8,
+				scollbarSpeedSensitivity: .5,
+				playlistBackgroundColor: "#FFFFFF",
+				playlistNameColor: "#000000",
+				thumbnailNormalBackgroundColor: "#ebebeb",
+				thumbnailHoverBackgroundColor: "#dcdcdc",
+				thumbnailDisabledBackgroundColor: "#c0c0c0",
+				searchInputBackgroundColor: "#c0c0c0",
+				searchInputColor: "#333333",
+				youtubeAndFolderVideoTitleColor: "#000000",
+				youtubeOwnerColor: "#919191",
+				youtubeDescriptionColor: "#919191",
+				//controller settings
+				showControllerWhenVideoIsStopped: "yes",
+				showNextAndPrevButtonsInController: "no",
+				showVolumeButton: "yes",
+				showTime: "yes",
+				showYoutubeQualityButton: "yes",
+				showInfoButton: "yes",
+				showDownloadButton: "yes",
+				showFacebookButton: "yes",
+				showEmbedButton: "yes",
+				showFullScreenButton: "yes",
+				repeatBackground: "yes",
+				controllerHeight: 43,
+				controllerHideDelay: 3,
+				startSpaceBetweenButtons: 10,
+				spaceBetweenButtons: 10,
+				scrubbersOffsetWidth: 2,
+				mainScrubberOffestTop: 17,
+				timeOffsetLeftWidth: 2,
+				timeOffsetRightWidth: 2,
+				timeOffsetTop: 1,
+				volumeScrubberHeight: 80,
+				volumeScrubberOfsetHeight: 20,
+				timeColor: "#919191",
+				youtubeQualityButtonNormalColor: "#919191",
+				youtubeQualityButtonSelectedColor: "#000000",
+				//embed window and info window
+				embedAndInfoWindowCloseButtonMargins: 7,
+				borderColor: "#CDCDCD",
+				mainLabelsColor: "#000000",
+				secondaryLabelsColor: "#444444",
+				shareAndEmbedTextColor: "#777777",
+				inputBackgroundColor: "#c0c0c0",
+				inputColor: "#333333",
+				//ads
+				openNewPageAtTheEndOfTheAds: "no",
+				adsButtonsPosition: "left",
+				skipToVideoText: "You can skip to video in: ",
+				skipToVideoButtonText: "Skip Ad",
+				adsTextNormalColor: "#6a6a6a",
+				adsTextSelectedColor: "#000000",
+				adsBorderNormalColor: "#BBBBBB",
+				adsBorderSelectedColor: "#000000"
+			});
+		});
+	body(style='background-color:#999999;margin:0px;')
+	#myDiv
+		// Playlists
+		ul#playlists(style='display:none;')
+			li(data-source='playlist1', data-playlist-name='MY HTML PLAYLIST', data-thumbnail-path='content/thumbnails/large1.jpg')
+				p.minimalWhiteCategoriesTitle
+					span.minimalWhiteBold Title:
+					| My playlist 1
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesType
+					span.minimalWhiteBold Type:
+					| HTML
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesDescription
+					span.minimalWhiteBold Description:
+					| Created using html elements, videos are loaded and played from the server.
+			| &#x9;&#x9;&#x9;
+			| &#x9;&#x9;&#x9;
+			li(data-source='list=PL5F394CB9AB8A3519', data-playlist-name='MY YOUTUBE PALYLIST', data-thumbnail-path='content/thumbnails/large2.jpg')
+				p.minimalWhiteCategoriesTitle
+					span.minimalWhiteBold Title:
+					| My playlist 2
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesType
+					span.minimalWhiteBold Type:
+					| YOUTUBE
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesDescription
+					span.minimalWhiteBold Description:
+					| Created by loading a Youtube playlist, videos are loaded and played from Youtube.
+			| &#x9;&#x9;&#x9;
+			| &#x9;&#x9;&#x9;
+			li(data-source='mixedPlaylist', data-playlist-name='MY MIXED PLAYLIST', data-thumbnail-path='content/thumbnails/large3.jpg')
+				p.minimalWhiteCategoriesTitle
+					span.minimalWhiteBold Title:
+					| My playlist 3
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesType
+					span.minimalWhiteBold Type:
+					| MIXED
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesDescription
+					span.minimalWhiteBold Description:
+					| Created using HTML elements, videos are loaded and played from the server or Youtube.
+			| &#x9;&#x9;&#x9;
+			| &#x9;&#x9;&#x9;
+			li(data-source='content/playlist_white.xml', data-playlist-name='MY XML PLAYLIST', data-thumbnail-path='content/thumbnails/large4.jpg')
+				p.minimalWhiteCategoriesTitle
+					span.minimalWhiteBold Title:
+					| My playlist 5
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesType
+					span.minimalWhiteBold Type:
+					| XML
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesDescription
+					span.minimalWhiteBold Description:
+					| Created using a XML file, videos are loaded and played from the server or Youtube.
+			| &#x9;&#x9;&#x9;
+			| &#x9;&#x9;&#x9;
+			li(data-source='folder=videos', data-playlist-name='MY FOLDER PLAYLIST', data-thumbnail-path='content/thumbnails/large5.jpg')
+				p.minimalWhiteCategoriesTitle
+					span.minimalWhiteBold Title:
+					| My playlist 4
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesType
+					span.minimalWhiteBold Type:
+					| FOLDER
+				| &#x9;&#x9;&#x9;&#x9;
+				p.minimalWhiteCategoriesDescription
+					span.minimalWhiteBold Description:
+					| Created using a folder with mp4 files, videos are loaded and played from the server.
+		ul#playlist1(style='display:none;')
+			li(data-thumb-source='content/thumbnails/small-fwd.jpg', data-video-source='http://sendvid.com/fhwteb74.mp4,http://sendvid.com/fhwteb74.mp4', data-poster-source='content/posters/mp4-poster.jpg,content/posters/mp4-poster-mobile.jpg', data-downloadable='no')
+				div(data-video-short-description='')
+					div
+						p.minimalWhiteThumbnailTitle VIDEO TITLE
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteThumbnailDesc
+							| Each video can contain a short description, the description can be formatted with CSS as you like.
+				| &#x9;&#x9;&#x9;&#x9;
+				div(data-video-long-description='')
+					div
+						p.minimalWhiteVideoTitleDesc VIDEO TITLE
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteVideoMainDesc
+							| Each video can contain a detailed description, the description can be formatted with CSS as you like. The description window and description button can be disabled individually for each video or globally for all videos.
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteLink
+							| For more information about this please follow
+							a(href='http://www.webdesign-flash.ro/', target='_blank') this link
+			| &#x9;&#x9;&#x9;
+			| &#x9;&#x9;&#x9;
+			li(data-thumb-source='content/thumbnails/small-grid.jpg', data-video-source='http://player.pageflip.com.hr/videos/Big_Buck_Bunny_Trailer.mp4')
+				div(data-video-short-description='')
+					div
+						p.minimalWhiteThumbnailTitle HORIZONTAL GRIDFOLIO PRO
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteThumbnailDesc Fully responsive media grid plugin with HTML content support.
+				| &#x9;&#x9;&#x9;&#x9;
+				div(data-video-long-description='')
+					div
+						p.minimalWhiteVideoTitleDesc HORIZONTAL GRIDFOLIO PRO
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteVideoMainDesc
+							| Each video can contain a detailed description, the description can be formatted with CSS as you like. The description window and description button can be disabled individually for each video or globally for all videos.
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteLink
+							| For more information about this please follow
+							a(href='http://www.webdesign-flash.ro/p/horizontal-gridfolio-pro/', target='_blank') this link
+		ul#mixedPlaylist(style='display:none;')
+			li(data-thumb-source='content/thumbnails/small-fwd.jpg', data-video-source='http://4.sendvid.com/nq2aiuux.mp4,http://4.sendvid.com/nq2aiuux.mp4', data-poster-source='content/posters/mp4-poster.jpg,content/posters/mp4-poster-mobile.jpg', data-downloadable='no')
+				div(data-video-short-description='')
+					div
+						p.minimalWhiteThumbnailTitle VIDEO TITLE
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteThumbnailDesc
+							| Each video can contain a short description, the description can be formatted with CSS as you like.
+				| &#x9;&#x9;&#x9;&#x9;
+				div(data-video-long-description='')
+					div
+						p.minimalWhiteVideoTitleDesc VIDEO TITLE
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteVideoMainDesc
+							| Each video can contain a detailed description, the description can be formatted with CSS as you like. The description window and description button can be disabled individually for each video or globally for all videos.
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteLink
+							| For more information about this please follow
+							a(href='http://www.webdesign-flash.ro/', target='_blank') this link
+			| &#x9;&#x9;&#x9;
+			li(data-thumb-source='content/thumbnails/small-lora.jpg', data-video-source='http://4.sendvid.com/nq2aiuux.mp4,http://4.sendvid.com/nq2aiuux.mp4', data-poster-source='content/posters/youtube-poster.jpg,content/posters/youtube-poster-mobile.jpg', data-downloadable='no')
+				div(data-video-short-description='')
+					div
+						p.minimalWhiteThumbnailTitle LORA PUISOR
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteThumbnailDesc
+							| Each video can contain a short description, the description can be formatted with CSS as you like.
+				| &#x9;&#x9;&#x9;&#x9;
+				div(data-video-long-description='')
+					div
+						p.minimalWhiteVideoTitleDesc LORA - PUISOR
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteVideoMainDesc
+							| Each video can contain a detailed description, the description can be formatted with CSS as you like. The description window and description button can be disabled individually for each video or globally for all videos.
+						| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+						p.minimalWhiteLink
+							| For more information about this please follow
+							a(href='http://www.webdesign-flash.ro/', target='_blank') this link
+
+
+
